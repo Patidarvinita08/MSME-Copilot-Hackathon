@@ -1,20 +1,23 @@
 import { Outlet } from "react-router-dom";
+
 import Sidebar from "../components/layout/Sidebar";
 import TopNavbar from "../components/layout/TopNavbar";
 
 function DashboardLayout() {
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-100">
 
       <Sidebar />
 
-      <TopNavbar />
+      <div className="ml-64 min-h-screen">
 
-      <main className="ml-64 pt-16">
-        <div className="p-6">
+        <TopNavbar />
+
+        <main className="p-6 lg:p-8">
           <Outlet />
-        </div>
-      </main>
+        </main>
+
+      </div>
 
     </div>
   );

@@ -1,56 +1,50 @@
 import {
   Bell,
   Search,
-  ChevronDown,
+  Sparkles,
 } from "lucide-react";
 
 function TopNavbar() {
   return (
-    <header className="fixed left-64 right-0 top-0 z-30 flex h-16 items-center justify-between border-b border-slate-200 bg-white px-6">
+    <header className="h-20 bg-white border-b border-slate-200 flex items-center justify-between px-6 lg:px-8">
 
-      {/* Search */}
-      <div className="flex w-80 items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">
+      {/* SEARCH */}
+      <div className="relative w-80">
 
-        <Search className="h-4 w-4 text-slate-400" />
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
 
         <input
           type="text"
-          placeholder="Search..."
-          className="w-full bg-transparent text-sm outline-none placeholder:text-slate-400"
+          placeholder="Search MSME Copilot..."
+          className="w-full pl-10 pr-4 py-2.5 bg-slate-100 rounded-xl text-sm outline-none focus:ring-2 focus:ring-blue-500"
         />
 
       </div>
 
-      {/* Right side */}
+      {/* RIGHT */}
       <div className="flex items-center gap-4">
 
-        {/* Notification */}
-        <button className="relative rounded-lg p-2 text-slate-500 hover:bg-slate-100">
-          <Bell className="h-5 w-5" />
+        <div className="hidden md:flex items-center gap-2 px-3 py-2 bg-blue-50 rounded-xl">
 
-          <span className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-red-500" />
-        </button>
+          <Sparkles className="w-4 h-4 text-blue-600" />
 
-        {/* Profile */}
-        <button className="flex items-center gap-2 rounded-lg px-2 py-1.5 hover:bg-slate-100">
+          <span className="text-sm font-medium text-blue-700">
+            AI Copilot Active
+          </span>
 
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-sm font-semibold text-white">
-            VP
-          </div>
+        </div>
 
-          <div className="hidden text-left md:block">
-            <p className="text-sm font-medium text-slate-900">
-              Business Admin
-            </p>
+        <button className="relative p-2.5 rounded-xl hover:bg-slate-100">
 
-            <p className="text-xs text-slate-500">
-              MSME Account
-            </p>
-          </div>
+          <Bell className="w-5 h-5 text-slate-600" />
 
-          <ChevronDown className="h-4 w-4 text-slate-400" />
+          <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full" />
 
         </button>
+
+        <div className="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold">
+          V
+        </div>
 
       </div>
 
