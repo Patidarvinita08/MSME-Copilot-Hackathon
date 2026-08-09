@@ -6,7 +6,7 @@
 venv/
 .venv/
 
-# Python
+# Python cache
 __pycache__/
 *.py[cod]
 *.pyo
@@ -21,6 +21,10 @@ chroma_db/
 
 # Uploaded files
 uploads/
+
+# Logs
+logs/
+*.log
 
 # VS Code
 .vscode/
