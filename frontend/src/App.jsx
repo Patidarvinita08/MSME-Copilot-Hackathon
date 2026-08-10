@@ -23,7 +23,7 @@ function App() {
         {/* Login */}
         <Route path="/login" element={<Login />} />
 
-        {/* Dashboard Layout */}
+        {/* Protected/App Layout */}
         <Route element={<DashboardLayout />}>
 
           <Route path="/dashboard" element={<Dashboard />} />
@@ -36,6 +36,9 @@ function App() {
           <Route path="/settings" element={<Settings />} />
 
         </Route>
+
+        {/* Unknown routes */}
+        <Route path="*" element={<Navigate to="/dashboard" replace />} />
 
       </Routes>
     </BrowserRouter>

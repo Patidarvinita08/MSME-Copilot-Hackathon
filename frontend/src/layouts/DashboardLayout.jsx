@@ -5,7 +5,7 @@ import TopNavbar from "../components/layout/TopNavbar";
 
 function DashboardLayout() {
   return (
-    <div className="min-h-screen bg-slate-100">
+    <div className="min-h-screen bg-slate-50">
 
       <Sidebar />
 

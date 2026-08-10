@@ -64,96 +64,98 @@ function Sidebar() {
   };
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-64 bg-slate-950 text-white flex flex-col">
+    <aside className="fixed left-0 top-0 z-40 flex h-screen w-64 flex-col border-r border-slate-200 bg-slate-950 text-white">
 
-      {/* LOGO */}
-      <div className="h-20 flex items-center px-6 border-b border-slate-800">
-
-        <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center">
-          <Bot className="w-6 h-6" />
+      {/* BRAND */}
+      <div className="flex h-20 items-center border-b border-slate-800 px-5">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-600 shadow-sm">
+          <Bot className="h-5 w-5" />
         </div>
 
-        <div className="ml-3">
-          <h1 className="font-bold text-lg">
+        <div className="ml-3 min-w-0">
+          <h1 className="truncate text-base font-bold">
             MSME Copilot
           </h1>
 
-          <p className="text-xs text-slate-400">
+          <p className="mt-0.5 truncate text-xs text-slate-400">
             AI Business Assistant
           </p>
         </div>
-
       </div>
 
       {/* NAVIGATION */}
-      <nav className="flex-1 px-3 py-6 space-y-1 overflow-y-auto">
+      <nav className="flex-1 overflow-y-auto px-3 py-6">
 
-        <p className="px-3 mb-3 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+        <p className="mb-3 px-3 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
           Workspace
         </p>
 
-        {menuItems.map((item) => {
+        <div className="space-y-1">
+          {menuItems.map((item) => {
+            const Icon = item.icon;
 
-          const Icon = item.icon;
+            return (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                className={({ isActive }) =>
+                  `group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition ${
+                    isActive
+                      ? "bg-blue-600 text-white shadow-sm"
+                      : "text-slate-400 hover:bg-slate-800 hover:text-white"
+                  }`
+                }
+              >
+                {({ isActive }) => (
+                  <>
+                    <Icon
+                      className={`h-[18px] w-[18px] shrink-0 transition ${
+                        isActive
+                          ? "text-white"
+                          : "text-slate-500 group-hover:text-white"
+                      }`}
+                    />
 
-          return (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium transition ${
-                  isActive
-                    ? "bg-blue-600 text-white"
-                    : "text-slate-400 hover:bg-slate-800 hover:text-white"
-                }`
-              }
-            >
-
-              <Icon className="w-5 h-5" />
-
-              <span>
-                {item.name}
-              </span>
-
-            </NavLink>
-          );
-        })}
-
+                    <span className="truncate">
+                      {item.name}
+                    </span>
+                  </>
+                )}
+              </NavLink>
+            );
+          })}
+        </div>
       </nav>
 
-      {/* USER / LOGOUT */}
-      <div className="p-4 border-t border-slate-800">
+      {/* USER AREA */}
+      <div className="border-t border-slate-800 p-4">
 
-        <div className="flex items-center gap-3 mb-4">
-
-          <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center font-semibold">
+        <div className="mb-4 flex items-center gap-3">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-600 text-sm font-semibold">
             V
           </div>
 
-          <div className="flex-1 min-w-0">
-
-            <p className="text-sm font-medium truncate">
+          <div className="min-w-0 flex-1">
+            <p className="truncate text-sm font-medium text-white">
               Demo User
             </p>
 
-            <p className="text-xs text-slate-500 truncate">
+            <p className="truncate text-xs text-slate-500">
               demo@msmecopilot.ai
             </p>
-
           </div>
-
         </div>
 
         <button
+          type="button"
           onClick={handleLogout}
-          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-slate-400 hover:bg-red-500/10 hover:text-red-400 transition"
+          className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-400 transition hover:bg-red-500/10 hover:text-red-400"
         >
-          <LogOut className="w-5 h-5" />
-          Logout
+          <LogOut className="h-[18px] w-[18px]" />
+          <span>Logout</span>
         </button>
 
       </div>
-
     </aside>
   );
 }

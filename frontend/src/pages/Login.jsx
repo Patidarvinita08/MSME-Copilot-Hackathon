@@ -27,7 +27,7 @@ function Login() {
             🤖
           </div>
 
-          <h1 className="text-3xl font-bold text-white">
+          <h1 className="text-3xl font-bold !text-white">
             MSME Copilot AI
           </h1>
 
@@ -39,14 +39,13 @@ function Login() {
         {/* Login Card */}
         <div className="rounded-2xl border border-slate-800 bg-slate-900 p-8 shadow-2xl">
 
-          <h2 className="text-2xl font-semibold text-white">
+          <h2 className="text-2xl font-semibold !text-white">
             Welcome back
           </h2>
 
           <p className="mt-1 mb-6 text-sm text-slate-400">
             Sign in to access your business dashboard
           </p>
-
           <form onSubmit={handleLogin} className="space-y-5">
 
             {/* Email */}
