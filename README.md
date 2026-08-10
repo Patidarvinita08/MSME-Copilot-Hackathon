@@ -480,13 +480,10 @@ The Analytics module provides business-related information and insights through 
 
 https://github.com/Patidarvinita08/MSME-Copilot-Hackathon
 
-### Live Demo
-
-**Coming soon / Add deployed application link**
 
 ### Demo Video
 
-**Add demonstration video link**
+(https://drive.google.com/file/d/1rvkH2Z6X9DBnNCs0gXSQmz_DOPxMfQX9/view?usp=drive_link)
 
 ---
 
